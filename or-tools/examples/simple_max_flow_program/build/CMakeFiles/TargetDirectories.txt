@@ -1,0 +1,8 @@
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/install/strip.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/install.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/simple_max_flow_program.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/list_install_components.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/rebuild_cache.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/edit_cache.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/install/local.dir
+/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/CMakeFiles/test.dir

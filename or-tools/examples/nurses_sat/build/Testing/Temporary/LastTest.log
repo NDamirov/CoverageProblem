@@ -1,0 +1,118 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_nurses_sat
+1/1 Test: test_nurses_sat
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/nurses_sat/build/bin/nurses_sat"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/nurses_sat/build
+"test_nurses_sat" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0124 16:41:56.839787     1 nurses_sat.cc:148] Solution 0
+I0124 16:41:56.840343     1 nurses_sat.cc:150] Day 0
+I0124 16:41:56.840361     1 nurses_sat.cc:162]   Nurse 0 does not work
+I0124 16:41:56.840366     1 nurses_sat.cc:157]   Nurse 1 works shift 0
+I0124 16:41:56.840371     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840375     1 nurses_sat.cc:157]   Nurse 3 works shift 2
+I0124 16:41:56.840378     1 nurses_sat.cc:150] Day 1
+I0124 16:41:56.840383     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840387     1 nurses_sat.cc:162]   Nurse 1 does not work
+I0124 16:41:56.840391     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840394     1 nurses_sat.cc:157]   Nurse 3 works shift 0
+I0124 16:41:56.840398     1 nurses_sat.cc:150] Day 2
+I0124 16:41:56.840401     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840405     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840408     1 nurses_sat.cc:157]   Nurse 2 works shift 0
+I0124 16:41:56.840412     1 nurses_sat.cc:162]   Nurse 3 does not work
+I0124 16:41:56.840444     1 nurses_sat.cc:148] Solution 1
+I0124 16:41:56.840450     1 nurses_sat.cc:150] Day 0
+I0124 16:41:56.840453     1 nurses_sat.cc:157]   Nurse 0 works shift 0
+I0124 16:41:56.840458     1 nurses_sat.cc:162]   Nurse 1 does not work
+I0124 16:41:56.840461     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840465     1 nurses_sat.cc:157]   Nurse 3 works shift 2
+I0124 16:41:56.840468     1 nurses_sat.cc:150] Day 1
+I0124 16:41:56.840472     1 nurses_sat.cc:162]   Nurse 0 does not work
+I0124 16:41:56.840475     1 nurses_sat.cc:157]   Nurse 1 works shift 2
+I0124 16:41:56.840479     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840482     1 nurses_sat.cc:157]   Nurse 3 works shift 0
+I0124 16:41:56.840485     1 nurses_sat.cc:150] Day 2
+I0124 16:41:56.840489     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840492     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840496     1 nurses_sat.cc:157]   Nurse 2 works shift 0
+I0124 16:41:56.840500     1 nurses_sat.cc:162]   Nurse 3 does not work
+I0124 16:41:56.840528     1 nurses_sat.cc:148] Solution 2
+I0124 16:41:56.840532     1 nurses_sat.cc:150] Day 0
+I0124 16:41:56.840536     1 nurses_sat.cc:157]   Nurse 0 works shift 0
+I0124 16:41:56.840540     1 nurses_sat.cc:162]   Nurse 1 does not work
+I0124 16:41:56.840543     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840548     1 nurses_sat.cc:157]   Nurse 3 works shift 2
+I0124 16:41:56.840551     1 nurses_sat.cc:150] Day 1
+I0124 16:41:56.840554     1 nurses_sat.cc:157]   Nurse 0 works shift 1
+I0124 16:41:56.840558     1 nurses_sat.cc:157]   Nurse 1 works shift 2
+I0124 16:41:56.840562     1 nurses_sat.cc:162]   Nurse 2 does not work
+I0124 16:41:56.840567     1 nurses_sat.cc:157]   Nurse 3 works shift 0
+I0124 16:41:56.840570     1 nurses_sat.cc:150] Day 2
+I0124 16:41:56.840574     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840578     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840582     1 nurses_sat.cc:157]   Nurse 2 works shift 0
+I0124 16:41:56.840586     1 nurses_sat.cc:162]   Nurse 3 does not work
+I0124 16:41:56.840608     1 nurses_sat.cc:148] Solution 3
+I0124 16:41:56.840613     1 nurses_sat.cc:150] Day 0
+I0124 16:41:56.840617     1 nurses_sat.cc:157]   Nurse 0 works shift 0
+I0124 16:41:56.840621     1 nurses_sat.cc:162]   Nurse 1 does not work
+I0124 16:41:56.840624     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840628     1 nurses_sat.cc:157]   Nurse 3 works shift 2
+I0124 16:41:56.840631     1 nurses_sat.cc:150] Day 1
+I0124 16:41:56.840635     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840638     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840642     1 nurses_sat.cc:162]   Nurse 2 does not work
+I0124 16:41:56.840645     1 nurses_sat.cc:157]   Nurse 3 works shift 0
+I0124 16:41:56.840649     1 nurses_sat.cc:150] Day 2
+I0124 16:41:56.840653     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840656     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840660     1 nurses_sat.cc:157]   Nurse 2 works shift 0
+I0124 16:41:56.840664     1 nurses_sat.cc:162]   Nurse 3 does not work
+I0124 16:41:56.840685     1 nurses_sat.cc:148] Solution 4
+I0124 16:41:56.840690     1 nurses_sat.cc:150] Day 0
+I0124 16:41:56.840694     1 nurses_sat.cc:162]   Nurse 0 does not work
+I0124 16:41:56.840697     1 nurses_sat.cc:157]   Nurse 1 works shift 0
+I0124 16:41:56.840701     1 nurses_sat.cc:157]   Nurse 2 works shift 1
+I0124 16:41:56.840705     1 nurses_sat.cc:157]   Nurse 3 works shift 2
+I0124 16:41:56.840708     1 nurses_sat.cc:150] Day 1
+I0124 16:41:56.840711     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840715     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840718     1 nurses_sat.cc:162]   Nurse 2 does not work
+I0124 16:41:56.840722     1 nurses_sat.cc:157]   Nurse 3 works shift 0
+I0124 16:41:56.840725     1 nurses_sat.cc:150] Day 2
+I0124 16:41:56.840729     1 nurses_sat.cc:157]   Nurse 0 works shift 2
+I0124 16:41:56.840732     1 nurses_sat.cc:157]   Nurse 1 works shift 1
+I0124 16:41:56.840735     1 nurses_sat.cc:157]   Nurse 2 works shift 0
+I0124 16:41:56.840740     1 nurses_sat.cc:162]   Nurse 3 does not work
+I0124 16:41:56.840743     1 nurses_sat.cc:169] Stop search after 5 solutions.
+I0124 16:41:56.840828     1 nurses_sat.cc:180] Statistics
+I0124 16:41:56.840833     1 nurses_sat.cc:181] CpSolverResponse summary:
+status: FEASIBLE
+objective: 0
+best_bound: 0
+booleans: 36
+conflicts: 5
+branches: 142
+propagations: 328
+integer_propagations: 443
+restarts: 77
+lp_iterations: 0
+walltime: 0.003504
+usertime: 0.003504
+deterministic_time: 0.00011241
+gap_integral: 0
+solution_fingerprint: 0x1d293e0fcff90608
+I0124 16:41:56.841181     1 nurses_sat.cc:182] solutions found : 5
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_nurses_sat" end time: Jan 24 16:41 MSK
+"test_nurses_sat" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK

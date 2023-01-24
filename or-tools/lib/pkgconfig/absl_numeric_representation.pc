@@ -1,0 +1,12 @@
+prefix=/Users/corentinl/work/or-tools/or-tools_x86_64_macOS-13.0.1_cpp_v9.5.2237
+exec_prefix=${prefix}
+libdir=/Users/corentinl/work/or-tools/or-tools_x86_64_macOS-13.0.1_cpp_v9.5.2237/lib
+includedir=/Users/corentinl/work/or-tools/or-tools_x86_64_macOS-13.0.1_cpp_v9.5.2237/include
+
+Name: absl_numeric_representation
+Description: Abseil numeric_representation library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_config = 20220623
+Libs: -L${libdir}  
+Cflags: -I${includedir} -Wno-float-conversion -Wno-implicit-float-conversion -Wno-implicit-int-float-conversion -Wno-implicit-int-conversion -Wno-shorten-64-to-32 -Wno-sign-conversion -Wno-unknown-warning-option -DNOMINMAX

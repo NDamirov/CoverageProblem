@@ -1,0 +1,25 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_basic_example
+1/1 Test: test_basic_example
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/basic_example/build/bin/basic_example"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/basic_example/build
+"test_basic_example" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0124 16:41:51.861196     1 basic_example.cc:32] Number of variables = 2
+I0124 16:41:51.861660     1 basic_example.cc:41] Number of constraints = 1
+I0124 16:41:51.861997     1 basic_example.cc:57] Solution:
+I0124 16:41:51.862011     1 basic_example.cc:58] Objective value = 4
+I0124 16:41:51.862024     1 basic_example.cc:59] x = 1
+I0124 16:41:51.862031     1 basic_example.cc:60] y = 1
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_basic_example" end time: Jan 24 16:41 MSK
+"test_basic_example" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK

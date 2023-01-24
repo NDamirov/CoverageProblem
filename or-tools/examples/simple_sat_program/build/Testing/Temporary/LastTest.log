@@ -1,0 +1,22 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_simple_sat_program
+1/1 Test: test_simple_sat_program
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_sat_program/build/bin/simple_sat_program"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_sat_program/build
+"test_simple_sat_program" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0124 16:41:54.582806     1 simple_sat_program.cc:53] x = 1
+I0124 16:41:54.583312     1 simple_sat_program.cc:54] y = 0
+I0124 16:41:54.583321     1 simple_sat_program.cc:55] z = 0
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_simple_sat_program" end time: Jan 24 16:41 MSK
+"test_simple_sat_program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK

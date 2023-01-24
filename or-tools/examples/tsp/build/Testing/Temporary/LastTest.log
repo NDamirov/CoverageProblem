@@ -1,0 +1,26 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_tsp
+1/1 Test: test_tsp
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/tsp/build/bin/tsp"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/tsp/build
+"test_tsp" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0124 16:41:55.263786     1 tsp.cc:74] Objective: 4384
+I0124 16:41:55.264249     1 tsp.cc:77] Route for Vehicle 0:
+I0124 16:41:55.264270     1 tsp.cc:86] 0 -> 9 -> 5 -> 8 -> 6 -> 2 -> 10 -> 16 -> 14 -> 13 -> 12 -> 11 -> 15 -> 3 -> 4 -> 1 -> 7 -> 0
+I0124 16:41:55.264274     1 tsp.cc:87] Distance of the route: 4384m
+I0124 16:41:55.264277     1 tsp.cc:88] 
+I0124 16:41:55.264280     1 tsp.cc:89] Advanced usage:
+I0124 16:41:55.264283     1 tsp.cc:90] Problem solved in 3ms
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_tsp" end time: Jan 24 16:41 MSK
+"test_tsp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK

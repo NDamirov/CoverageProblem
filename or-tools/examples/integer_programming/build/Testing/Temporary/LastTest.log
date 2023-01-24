@@ -1,0 +1,18 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_integer_programming
+1/1 Test: test_integer_programming
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/integer_programming/build/bin/integer_programming"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/integer_programming/build
+"test_integer_programming" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"test_integer_programming" end time: Jan 24 16:41 MSK
+"test_integer_programming" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK

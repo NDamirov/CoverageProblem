@@ -1,0 +1,20 @@
+Start testing: Jan 24 16:41 MSK
+----------------------------------------------------------
+1/1 Testing: test_simple_max_flow_program
+1/1 Test: test_simple_max_flow_program
+Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build/bin/simple_max_flow_program"
+Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_max_flow_program/build
+"test_simple_max_flow_program" start time: Jan 24 16:41 MSK
+Output:
+----------------------------------------------------------
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0124 16:41:53.232094     1 simple_max_flow_program.cc:62] Solving the max flow problem failed. Solver status: 0
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_simple_max_flow_program" end time: Jan 24 16:41 MSK
+"test_simple_max_flow_program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 16:41 MSK
