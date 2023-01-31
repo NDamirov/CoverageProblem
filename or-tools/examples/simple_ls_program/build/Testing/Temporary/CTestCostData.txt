@@ -1,2 +1,2 @@
-test_simple_ls_program 2 0.00571343
+test_simple_ls_program 4 0.0027932
 ---

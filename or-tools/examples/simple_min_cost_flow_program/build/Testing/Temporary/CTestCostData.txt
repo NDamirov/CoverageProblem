@@ -1,2 +1,2 @@
-test_simple_min_cost_flow_program 2 0.00376665
+test_simple_min_cost_flow_program 4 0.00183165
 ---

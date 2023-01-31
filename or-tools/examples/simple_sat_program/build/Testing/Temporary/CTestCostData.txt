@@ -1,2 +1,2 @@
-test_simple_sat_program 2 0.00562514
+test_simple_sat_program 4 0.0027385
 ---

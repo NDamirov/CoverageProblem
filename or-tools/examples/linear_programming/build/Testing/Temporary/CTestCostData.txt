@@ -1,2 +1,2 @@
-test_linear_programming 2 0.00723591
+test_linear_programming 4 0.00389794
 ---

@@ -75,6 +75,8 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Library/Developer/CommandLineTools/usr/include/c++/v1/cstring
  /Library/Developer/CommandLineTools/usr/include/c++/v1/string.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/string.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_rsize_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_errno_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/strings.h
  /Library/Developer/CommandLineTools/usr/include/c++/v1/utility
  /Library/Developer/CommandLineTools/usr/include/c++/v1/__tuple
@@ -151,56 +153,13 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Library/Developer/CommandLineTools/usr/include/c++/v1/wctype.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/wctype.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_types/_wctrans_t.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/graph/assignment.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/graph/ebert_graph.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/str_cat.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/array
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/port.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/attributes.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/config.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/TargetConditionals.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/options.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/ciso646
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/policy_checks.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/any
- /Library/Developer/CommandLineTools/usr/include/c++/v1/optional
- /Library/Developer/CommandLineTools/usr/include/c++/v1/variant
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/optimization.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/numbers.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/tmmintrin.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/pmmintrin.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/emmintrin.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/xmmintrin.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/mmintrin.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/mm_malloc.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/ctime
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/endian.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/casts.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/identity.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/macros.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/meta/type_traits.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/unaligned_access.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/bits.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/internal/bits.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/int128.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/cmath
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/int128_have_intrinsic.inc
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/string_view.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/throw_delegate.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/integral_types.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/cinttypes
- /Library/Developer/CommandLineTools/usr/include/c++/v1/inttypes.h
- /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/inttypes.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/inttypes.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/logging.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/memory/memory.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/status/status.h
  /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream
  /Library/Developer/CommandLineTools/usr/include/c++/v1/ios
  /Library/Developer/CommandLineTools/usr/include/c++/v1/__locale
  /Library/Developer/CommandLineTools/usr/include/c++/v1/mutex
  /Library/Developer/CommandLineTools/usr/include/c++/v1/__mutex_base
  /Library/Developer/CommandLineTools/usr/include/c++/v1/chrono
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/ctime
  /Library/Developer/CommandLineTools/usr/include/c++/v1/ratio
  /Library/Developer/CommandLineTools/usr/include/c++/v1/system_error
  /Library/Developer/CommandLineTools/usr/include/c++/v1/__errc
@@ -231,13 +190,12 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_xlocale.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_ctype.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/__wctype.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_inttypes.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_stdio.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_stdlib.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_string.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_time.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_wchar.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/stddef.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_wctype.h
  /Library/Developer/CommandLineTools/usr/include/c++/v1/streambuf
  /Library/Developer/CommandLineTools/usr/include/c++/v1/istream
@@ -260,8 +218,6 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_nlink_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_useconds_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_suseconds_t.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_rsize_t.h
- /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_errno_t.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fd_def.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fd_setsize.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fd_set.h
@@ -274,34 +230,82 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/_types/_nl_item.h
  /Library/Developer/CommandLineTools/usr/include/c++/v1/__bsd_locale_defaults.h
  /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/fstream
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/filesystem
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/stack
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/deque
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/linear_solver/linear_solver.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/map
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/__tree
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/__node_handle
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/optional
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/port.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/attributes.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/config.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/TargetConditionals.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/options.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/ciso646
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/policy_checks.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/any
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/variant
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/optimization.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/parse.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/internal/parse.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/declare.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/string_view.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/throw_delegate.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/macros.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/usage.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/status/status.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/inlined_vector.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/algorithm/algorithm.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/inlined_vector.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/compressed_tuple.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/utility/utility.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/inline_variable.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/identity.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/invoke.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/meta/type_traits.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/memory/memory.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/types/span.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/types/internal/span.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/functional/function_ref.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/functional/internal/function_ref.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/status/internal/status_internal.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/cord.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/endian.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/casts.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/unaligned_access.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/per_thread_tls.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/cord_analysis.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_internal.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/cord_buffer.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/bits.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/internal/bits.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_flat.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_data_edge.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_btree.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/raw_logging.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/atomic_hook.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/log_severity.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/array
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_btree_reader.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_btree_navigator.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_crc.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cord_rep_ring.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/layout.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/str_cat.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/numbers.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/tmmintrin.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/pmmintrin.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/emmintrin.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/xmmintrin.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/mmintrin.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/mm_malloc.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/int128.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/cmath
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/numeric/int128_have_intrinsic.inc
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/cxxabi.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/__cxxabi_config.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/cordz_functions.h
@@ -344,11 +348,25 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/resize_uninitialized.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/string_constant.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/types/optional.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/match.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/str_format.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/arg.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/sstream
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/extension.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/output.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/bind.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/checker.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/strings/internal/str_format/parser.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/integral_types.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/cinttypes
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/inttypes.h
+ /Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/inttypes.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/inttypes.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/xlocale/_inttypes.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/logging.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/check.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/log.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/sstream
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/flags.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/declare.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/flag.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/config.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/flags/internal/flag.h
@@ -364,11 +382,151 @@ CMakeFiles/test-app.dir/main.cpp.o
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/logging_export.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/macros.h
  /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/vlog_is_on.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/util/permutation.h
- /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/util/zvector.h
- /Library/Developer/CommandLineTools/usr/include/c++/v1/fstream
- /Library/Developer/CommandLineTools/usr/include/c++/v1/filesystem
- /Library/Developer/CommandLineTools/usr/include/c++/v1/stack
- /Library/Developer/CommandLineTools/usr/include/c++/v1/deque
- /Library/Developer/CommandLineTools/usr/include/c++/v1/iomanip
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/timer.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/base/basictypes.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/linear_solver/linear_expr.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/flat_hash_map.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/algorithm/container.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/numeric
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/__hash_table
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_set
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/container_memory.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/hash_function_defaults.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/hash/hash.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/hash/internal/hash.h
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/forward_list
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/list
+ /Library/Developer/CommandLineTools/usr/include/c++/v1/set
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/fixed_array.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/hash/internal/city.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/hash/internal/low_level_hash.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/types/variant.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/raw_hash_map.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/raw_hash_set.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/base/internal/prefetch.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/common.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/hash_policy_traits.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/hashtable_debug_hooks.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/container/internal/hashtablez_sampler.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/absl/profiling/internal/sample_recorder.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/linear_solver/linear_solver.pb.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/port_def.inc
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/port_undef.inc
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/io/coded_stream.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/common.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/macros.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/platform_macros.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/port.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/libkern/OSByteOrder.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/libkern/i386/OSByteOrder.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_os_inline.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/stringpiece.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/hash.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/logging.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/status.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/strutil.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/port.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/arena.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/arena_impl.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/arenaz_sampler.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/arenastring.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/explicitly_constructed.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/generated_message_util.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/once.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/any.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/message_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/metadata_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/has_bits.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/implicit_weak_message.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/repeated_field.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/repeated_ptr_field.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/wire_format_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/casts.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/generated_message_reflection.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/descriptor.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/mutex.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/generated_enum_reflection.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/generated_enum_util.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/unknown_field_set.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/io/zero_copy_stream_impl_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/callback.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/io/zero_copy_stream.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/stubs/stl_util.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/parse_context.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/endian.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/inlined_string_field.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/message.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/mach_time.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/mach_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/host_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/message.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/port.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/boolean.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/boolean.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/boolean.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/vm_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/vm_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/kern_return.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/kern_return.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/kern_return.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_statistics.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/time_value.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/host_notify.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/host_special_ports.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/memory_object_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_prot.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_sync.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/exception_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/exception.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/exception.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/thread_status.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/thread_status.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/thread_status.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/fp_reg.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/thread_state.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/i386/eflags.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/thread_state.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/mach_voucher_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/std_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/processor_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/processor_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/processor_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/task_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/policy.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/task_inspect.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/task_policy.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/task_special_ports.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/thread_info.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/thread_policy.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/thread_special_ports.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/clock_types.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_attributes.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_inherit.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_purgable.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_behavior.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_region.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/machine/vm_param.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/i386/vm_param.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/vm_page_size.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/kmod.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/mach/dyld_kernel.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fsid_t.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX11.0.sdk/usr/include/sys/_types/_fsobj_id_t.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_type_handler.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/extension_set.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_entry.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_entry_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/reflection_ops.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_field_inl.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_field.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/map_field_lite.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/util/optional_boolean.pb.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/linear_solver/linear_solver_callback.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/port/proto_utils.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/google/protobuf/text_format.h
+ /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/include/ortools/util/parse_proto.h
 

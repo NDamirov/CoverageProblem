@@ -1,23 +1,23 @@
-Start testing: Jan 24 16:41 MSK
+Start testing: Jan 31 00:09 MSK
 ----------------------------------------------------------
 1/1 Testing: test_simple_knapsack_program
 1/1 Test: test_simple_knapsack_program
 Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_knapsack_program/build/bin/simple_knapsack_program"
 Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_knapsack_program/build
-"test_simple_knapsack_program" start time: Jan 24 16:41 MSK
+"test_simple_knapsack_program" start time: Jan 31 00:09 MSK
 Output:
 ----------------------------------------------------------
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I0124 16:41:52.896212     1 simple_knapsack_program.cc:71] Total value: 847
-I0124 16:41:52.896670     1 simple_knapsack_program.cc:72] Packed items: {2, 3, 6, 13}
-I0124 16:41:52.896678     1 simple_knapsack_program.cc:73] Total weight: 847
-I0124 16:41:52.896682     1 simple_knapsack_program.cc:74] Packed weights: {194, 130, 230, 293}
+I0131 00:09:05.663285     1 simple_knapsack_program.cc:71] Total value: 847
+I0131 00:09:05.663742     1 simple_knapsack_program.cc:72] Packed items: {2, 3, 6, 13}
+I0131 00:09:05.663750     1 simple_knapsack_program.cc:73] Total weight: 847
+I0131 00:09:05.663754     1 simple_knapsack_program.cc:74] Packed weights: {194, 130, 230, 293}
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_simple_knapsack_program" end time: Jan 24 16:41 MSK
+"test_simple_knapsack_program" end time: Jan 31 00:09 MSK
 "test_simple_knapsack_program" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 24 16:41 MSK
+End testing: Jan 31 00:09 MSK

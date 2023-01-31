@@ -1,2 +1,2 @@
-test_nurses_sat 2 0.00555104
+test_nurses_sat 4 0.00268274
 ---

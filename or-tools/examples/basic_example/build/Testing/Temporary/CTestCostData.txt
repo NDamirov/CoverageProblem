@@ -1,2 +1,2 @@
-test_basic_example 2 0.00425284
+test_basic_example 4 0.0021688
 ---

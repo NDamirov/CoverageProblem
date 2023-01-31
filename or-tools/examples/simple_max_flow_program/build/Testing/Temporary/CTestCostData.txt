@@ -1,2 +1,2 @@
-test_simple_max_flow_program 2 0.00365559
+test_simple_max_flow_program 4 0.00178949
 ---

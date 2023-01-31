@@ -1,2 +1,2 @@
-test_simple_lp_program 2 0.00411641
+test_simple_lp_program 4 0.00201598
 ---

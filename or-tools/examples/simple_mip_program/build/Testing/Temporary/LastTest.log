@@ -1,30 +1,30 @@
-Start testing: Jan 24 16:41 MSK
+Start testing: Jan 31 00:09 MSK
 ----------------------------------------------------------
 1/1 Testing: test_simple_mip_program
 1/1 Test: test_simple_mip_program
 Command: "/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_mip_program/build/bin/simple_mip_program"
 Directory: /Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/simple_mip_program/build
-"test_simple_mip_program" start time: Jan 24 16:41 MSK
+"test_simple_mip_program" start time: Jan 31 00:09 MSK
 Output:
 ----------------------------------------------------------
 WARNING: Logging before InitGoogleLogging() is written to STDERR
-I0124 16:41:54.240931     1 simple_mip_program.cc:39] Number of variables = 2
-I0124 16:41:54.241458     1 simple_mip_program.cc:53] Number of constraints = 2
-I0124 16:41:54.242270     1 simple_mip_program.cc:73] Solution:
-I0124 16:41:54.242281     1 simple_mip_program.cc:74] Objective value = 23
-I0124 16:41:54.242297     1 simple_mip_program.cc:75] x = 3
-I0124 16:41:54.242305     1 simple_mip_program.cc:76] y = 2
-I0124 16:41:54.242309     1 simple_mip_program.cc:80] 
+I0131 00:09:07.000269     1 simple_mip_program.cc:39] Number of variables = 2
+I0131 00:09:07.000816     1 simple_mip_program.cc:53] Number of constraints = 2
+I0131 00:09:07.001599     1 simple_mip_program.cc:73] Solution:
+I0131 00:09:07.001609     1 simple_mip_program.cc:74] Objective value = 23
+I0131 00:09:07.001625     1 simple_mip_program.cc:75] x = 3
+I0131 00:09:07.001632     1 simple_mip_program.cc:76] y = 2
+I0131 00:09:07.001635     1 simple_mip_program.cc:80] 
 Advanced usage:
-I0124 16:41:54.242312     1 simple_mip_program.cc:81] Problem solved in 3 milliseconds
-I0124 16:41:54.242329     1 simple_mip_program.cc:82] Problem solved in 0 iterations
-I0124 16:41:54.242334     1 simple_mip_program.cc:83] Problem solved in 1 branch-and-bound nodes
+I0131 00:09:07.001638     1 simple_mip_program.cc:81] Problem solved in 3 milliseconds
+I0131 00:09:07.001655     1 simple_mip_program.cc:82] Problem solved in 0 iterations
+I0131 00:09:07.001660     1 simple_mip_program.cc:83] Problem solved in 1 branch-and-bound nodes
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_simple_mip_program" end time: Jan 24 16:41 MSK
+"test_simple_mip_program" end time: Jan 31 00:09 MSK
 "test_simple_mip_program" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jan 24 16:41 MSK
+End testing: Jan 31 00:09 MSK

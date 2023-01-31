@@ -114,20 +114,6 @@ endif #ifeq SOURCE
 .PHONY: test
 test:
 	$(MAKE) run SOURCE=examples/basic_example/basic_example.cc
-	$(MAKE) run SOURCE=examples/linear_programming/linear_programming.cc
-	$(MAKE) run SOURCE=examples/integer_programming/integer_programming.cc
-	$(MAKE) run SOURCE=examples/simple_knapsack_program/simple_knapsack_program.cc
-	$(MAKE) run SOURCE=examples/simple_max_flow_program/simple_max_flow_program.cc
-	$(MAKE) run SOURCE=examples/simple_min_cost_flow_program/simple_min_cost_flow_program.cc
-	$(MAKE) run SOURCE=examples/simple_lp_program/simple_lp_program.cc
-	$(MAKE) run SOURCE=examples/simple_mip_program/simple_mip_program.cc
-	$(MAKE) run SOURCE=examples/simple_sat_program/simple_sat_program.cc
-	$(MAKE) run SOURCE=examples/simple_ls_program/simple_ls_program.cc
-	$(MAKE) run SOURCE=examples/tsp/tsp.cc
-	$(MAKE) run SOURCE=examples/vrp/vrp.cc
-	$(MAKE) run SOURCE=examples/nurses_cp/nurses_cp.cc
-	$(MAKE) run SOURCE=examples/nurses_sat/nurses_sat.cc
-	$(MAKE) run SOURCE=examples/minimal_jobshop_cp/minimal_jobshop_cp.cc
 
 ############
 ##  MISC  ##

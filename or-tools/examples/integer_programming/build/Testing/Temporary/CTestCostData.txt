@@ -1,2 +1,2 @@
-test_integer_programming 2 0.0119378
+test_integer_programming 4 0.00606893
 ---
