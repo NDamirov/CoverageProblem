@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,7 +19,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::Redraw()
 {
-    std::ifstream fin("/Users/namigdamirov/Documents/HSE/CoverageProblem/build-CoverageVisualizer-Qt_6_4_1_for_macOS-Debug/out.txt");
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open file"), "~");
+    if (fileName.isEmpty()) {
+        return;
+    }
+    std::ifstream fin(fileName.toStdString());
     std::string s;
     std::vector<std::string> input;
     while (std::getline(fin, s)) {
@@ -35,23 +40,20 @@ void MainWindow::Redraw()
     ui->graphicsView->clearMask();
     int block_height = ui->graphicsView->height() / height;
     int block_width = ui->graphicsView->width() / width;
-    std::cout << "Height: " << block_height << " " << height << std::endl;
-//    for (int i = 0; i < height; ++i) {
-//        for (int j = 0; j < width; ++j) {
-//            int ch = block_height * i;
-//            int cw = block_width * i;
-//            QGraphicsRectItem *rect = new QGraphicsRectItem(ch, cw, ch + block_height, cw + block_width);
-//            if (input[i][j] == '|') {
-//                scene->addRect(QRectF(ch, cw, ch + block_height, cw + block_width), QPen());
-//                rect->setBrush(Qt::red);
-//            } else if (input[i][j] == '-') {
-//                rect->setBrush(Qt::green);
-//            } else {
-//                rect->setBrush(Qt::black);
-//            }
-//            scene->addItem(rect);
-//        }
-//    }
+    int block_size = std::min(block_height, block_width);
+    for (int i = 0; i < height; ++i) {
+        for (int j = 0; j < width; ++j) {
+            int ch = block_size * i;
+            int cw = block_size * j;
+            if (input[i][j] == '|') {
+                scene->addRect(QRectF(cw, ch, block_size, block_size), QPen(Qt::black), QBrush(Qt::red));
+            } else if (input[i][j] == '-') {
+                scene->addRect(QRectF(cw, ch, block_size, block_size), QPen(Qt::black), QBrush(Qt::green));
+            } else {
+                scene->addRect(QRectF(cw, ch, block_size, block_size), QPen(Qt::black), QBrush(Qt::black));
+            }
+        }
+    }
 }
 
 MainWindow::~MainWindow()
