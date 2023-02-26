@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsRectItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -11,11 +12,15 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+private slots:
+    void Redraw();
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+    QGraphicsScene *scene;
 };
 #endif // MAINWINDOW_H
