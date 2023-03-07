@@ -7,6 +7,16 @@
 using namespace operations_research;
 using namespace std;
 
+struct Point {
+    int x;
+    int y;
+};
+
+struct Rank {
+    Point f;
+    Point s;
+};
+
 template<typename FieldElement>
 class Field {
 public:
@@ -86,7 +96,7 @@ public:
         for (int j = 0; j < 3 * spaces_; ++j) {
             x[j] = solver->MakeIntVar(0.0, 1.0, "");
         }
-        
+
         for (int i = 0; i < 2 * spaces_; ++i) {
             MPConstraint* constraint = solver->MakeRowConstraint(-solver->infinity(), bounds[i], "");
             for (int j = 0; j < 3 * spaces_; ++j) {
@@ -106,7 +116,6 @@ public:
         for (int i = 0; i < height_; ++i) {
             for (int j = 0; j < width_; ++j) {
                 if (field_[i][j] == -1) {
-                    field_[i][j] = -1;
                     continue;
                 }
                 field_[i][j] = x[ind++]->solution_value();
@@ -136,13 +145,35 @@ Field<int> read_field(const std::string& file_name) {
     return Field<int>(input);
 }
 
+class PathGenerator {
+public:
+    PathGenerator(std::vector<std::vector<int>>&& field) : field_(std::move(field)) {}
+    
+    void MakePath() {
+        std::vector<Rank> ranks;
+        for (int i = 0; i < field_.size(); ++i) {
+            for (int j = 0; j < field_[0].size() && field_[i][j] >= 0; ++j) {
+                if (field_[i][j] == '-' && (j == 0 || field_[i][j - 1] == -1)) {
+                    
+                } else if (field_[i][j] == '|') {
+
+                }
+            }
+        }
+    }
+
+private:
+    std::vector<std::vector<int>> field_;
+};
+
 int main() { 
     Field<int> current = read_field("field.txt");
-    auto result = current.Solve();
+    std::vector<std::vector<int>> result = current.Solve();
+    // -------------- OUTPUT START --------------
     for (const std::vector<int>& x : result) {
         for (int y : x) {
             if (y == -1) {
-                cout << "*";
+                cout << "#";
             } else if (y == 0) {
                 cout << "|";
             } else {
@@ -151,10 +182,8 @@ int main() {
         }
         cout << "\n";
     }
+    cout.flush();
+    // -------------- OUTPUT FINISH --------------
+    PathGenerator path_generator(std::move(result));
     return 0;
 }
-
-
-
-
-
