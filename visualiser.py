@@ -1,3 +1,4 @@
+from time import sleep
 import pygame
 import random
 from math import sqrt
@@ -52,18 +53,19 @@ class Ball(pygame.sprite.Sprite):
         pygame.draw.circle(self.image, color, [radius, radius], radius)
 
         self.rect = self.image.get_rect()
-        self.rect.x = path[0][0] * (BLOCK_SIZE * BORDER_SIZE)
-        self.rect.y = path[0][1] * (BLOCK_SIZE * BORDER_SIZE)
-        print(self.rect.x, self.rect.y)
+        self.rect.x = path[0][1] * (BLOCK_SIZE + BORDER_SIZE)
+        self.rect.y = path[0][0] * (BLOCK_SIZE + BORDER_SIZE)
+        self.real_x = self.rect.x
+        self.real_y = self.rect.y
 
     def update(self):
-        x = self.rect.x
-        y = self.rect.y
+        x = self.real_x
+        y = self.real_y
         dist = 0
         while self.nx != len(path):
             nx = self.path[self.nx]
             nxc = (nx[1] * (BLOCK_SIZE + BORDER_SIZE),
-                       nx[0] * (BLOCK_SIZE + BORDER_SIZE))
+                   nx[0] * (BLOCK_SIZE + BORDER_SIZE))
             curr = sqrt((x - nxc[0]) ** 2 + (y - nxc[1]) ** 2)
             if dist + curr <= self.speed:
                 dist += curr
@@ -76,10 +78,10 @@ class Ball(pygame.sprite.Sprite):
             y += (nxc[1] - y) * to_go / curr
             break
         
-        self.rect.x = int(x)
-        self.rect.y = int(y)
-        # self.rect.x = self.path[0][1] * (BLOCK_SIZE * BORDER_SIZE)
-        # self.rect.y = self.path[0][0] * (BLOCK_SIZE * BORDER_SIZE)
+        self.rect.x = x
+        self.rect.y = y
+        self.real_x = x
+        self.real_y = y
 
 pygame.init()
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
@@ -93,7 +95,7 @@ for i in range(path_size):
     path.append((curr[2], curr[3]))
 
 all_sprites_list = pygame.sprite.Group()
-ball = Ball(WHITE, 5, path, speed=10)
+ball = Ball(WHITE, 5, path, speed=100)
 all_sprites_list.add(ball)
 
 clock = pygame.time.Clock()
@@ -107,8 +109,7 @@ while not done:
     all_sprites_list.update()
     all_sprites_list.draw(screen)
 
-    pygame.display.flip()
-
+    pygame.display.flip()    
     clock.tick(30)
 
 pygame.quit()
