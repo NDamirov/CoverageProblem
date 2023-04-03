@@ -1,9 +1,16 @@
+#include <ostream>
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 #include "ortools/linear_solver/linear_solver.h"
+#include "ortools/constraint_solver/routing.h"
+#include "ortools/constraint_solver/routing_enums.pb.h"
+#include "ortools/constraint_solver/routing_index_manager.h"
+#include "ortools/constraint_solver/routing_parameters.h"
+
 using namespace operations_research;
 using namespace std;
 
@@ -16,6 +23,41 @@ struct Rank {
     Point f;
     Point s;
 };
+
+std::ostream& operator<<(std::ostream& stream, const Point& x) {
+    stream << x.x << " " << x.y;
+    return stream;
+}
+
+std::ostream& operator<<(std::ostream& stream, const Rank& x) {
+    stream << x.f << " " << x.s;
+    return stream;
+}
+
+void PrintSolution(const RoutingIndexManager& manager, const RoutingModel& routing, 
+    const Assignment& solution, const std::vector<Rank>& ranks) {
+    int64_t index = routing.Start(0);
+    stringstream result;
+    int size = 0;
+    vector<bool> used_ranks(ranks.size(), false);
+    while (routing.IsEnd(index) == false) {
+        int idx = manager.IndexToNode(index).value();
+        if (!used_ranks[idx / 2]) {
+            used_ranks[idx / 2] = true;
+            // LOG(INFO) << idx << " -> ";
+            Rank curr = ranks[idx / 2];
+            if (!(idx & 1)) {
+                swap(curr.f, curr.s);
+            }
+            result << curr << '\n';
+            ++size;
+        }
+        index = solution.Value(routing.NextVar(index));
+    }
+    cout << size << '\n';
+    cout << result.str();
+    cout.flush();
+}
 
 template<typename FieldElement>
 class Field {
@@ -150,26 +192,98 @@ public:
     PathGenerator(std::vector<std::vector<int>>&& field) : field_(std::move(field)) {}
     
     void MakePath() {
-        std::vector<Rank> ranks;
-        for (int i = 0; i < field_.size(); ++i) {
-            for (int j = 0; j < field_[0].size() && field_[i][j] >= 0; ++j) {
-                if (field_[i][j] == '-' && (j == 0 || field_[i][j - 1] == -1)) {
-                    
-                } else if (field_[i][j] == '|') {
-
-                }
-            }
-        }
+        std::vector<Rank> ranks = BuildRanks();
+        std::vector<std::vector<float>> coefs = BuildDistanceMatrix(ranks);
+        LOG(INFO) << "Starting TSP";
+        Tsp(coefs, ranks);
     }
 
 private:
     std::vector<std::vector<int>> field_;
+
+    float DistanceCounter(const Point& x, const Point& y) {
+        return abs(x.x - y.x) + abs(x.y - y.y);
+    }
+
+    std::vector<Rank> BuildRanks() {
+        std::vector<Rank> ranks;
+        int height = field_.size();
+        int width = field_[0].size();
+        for (int i = 0; i < height; ++i) {
+            for (int j = 0; j < width; ++j) {
+                if (field_[i][j] == 1 && (j == 0 || field_[i][j - 1] != 1)) { // horizontal
+                    int length = 1;
+                    while (j + length < width && field_[i][j + length] == 1) {
+                        length++;
+                    }
+                    ranks.push_back({{i, j}, {i, j + length - 1}});
+                } else if (field_[i][j] == 0 && (i == 0 || field_[i - 1][j] != 0)) {
+                    int length = 1;
+                    while (i + length < height && field_[i + length][j] == 0) {
+                        length++;
+                    }
+                    ranks.push_back({{i, j}, {i + length - 1, j}});
+                }
+            }
+        }
+        return ranks;
+    }
+
+    std::vector<std::vector<float>> BuildDistanceMatrix(const std::vector<Rank>& ranks) {
+        std::vector<std::vector<float>> result(2 * ranks.size(), std::vector<float>(2 * ranks.size(), 0));
+        // LOG(INFO) << ranks[0];
+        // LOG(INFO) << ranks[1];
+        // LOG(INFO) << ranks[2];
+        for (int i = 0; i < ranks.size(); ++i) {
+            for (int j = 0; j < ranks.size(); ++j) {
+                if (i == j) {
+                    continue;
+                }
+                result[i + i + 1][j + j] = DistanceCounter(ranks[i].f, ranks[j].s);
+                result[i + i + 1][j + j + 1] = DistanceCounter(ranks[i].f, ranks[j].f);
+                result[i + i][j + j] = DistanceCounter(ranks[i].s, ranks[j].f);
+                result[i + i][j + j + 1] = DistanceCounter(ranks[i].s, ranks[j].s);
+            }
+        }
+
+        // for (int i = 0; i < 6; ++i) {
+        //     for (int j = 0; j < 6; ++j) {
+        //         LOG(INFO) << i << " " << j << " " << result[i][j];
+        //     }
+        // }
+        return result;
+    }
+
+    void Tsp(std::vector<std::vector<float>>& dists, const std::vector<Rank> ranks) {
+        const RoutingIndexManager::NodeIndex depot{0};
+        RoutingIndexManager manager(dists.size(), 1, depot);
+
+        RoutingModel routing(manager);
+
+        const int transit_callback_index = routing.RegisterTransitCallback(
+            [&dists, &manager](int64_t from_index,
+                                        int64_t to_index) -> int64_t {
+                // Convert from routing variable Index to distance matrix NodeIndex.
+                auto from_node = manager.IndexToNode(from_index).value();
+                auto to_node = manager.IndexToNode(to_index).value();
+                return dists[from_node][to_node];
+            });
+
+        routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index);
+        RoutingSearchParameters searchParameters = DefaultRoutingSearchParameters();
+        searchParameters.set_first_solution_strategy(
+            FirstSolutionStrategy::PATH_CHEAPEST_ARC);
+
+        const Assignment* solution = routing.SolveWithParameters(searchParameters);
+        PrintSolution(manager, routing, *solution, ranks);
+    }
 };
 
 int main() { 
     Field<int> current = read_field("field.txt");
     std::vector<std::vector<int>> result = current.Solve();
     // -------------- OUTPUT START --------------
+    std::cout << result.size() << " " << result[0].size() << '\n';
     for (const std::vector<int>& x : result) {
         for (int y : x) {
             if (y == -1) {
@@ -185,5 +299,6 @@ int main() {
     cout.flush();
     // -------------- OUTPUT FINISH --------------
     PathGenerator path_generator(std::move(result));
+    path_generator.MakePath();
     return 0;
 }
