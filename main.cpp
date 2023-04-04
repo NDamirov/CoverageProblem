@@ -40,11 +40,21 @@ void PrintSolution(const RoutingIndexManager& manager, const RoutingModel& routi
     stringstream result;
     int size = 0;
     vector<bool> used_ranks(ranks.size(), false);
+    vector<int> route;
+    route.reserve(2 * ranks.size());
     while (routing.IsEnd(index) == false) {
         int idx = manager.IndexToNode(index).value();
+        route.push_back(idx);
+        index = solution.Value(routing.NextVar(index));
+    }
+    if (route[1] != 1) {
+        route.insert(route.begin(), route.back());
+        route.pop_back();
+    }
+    for (int idx : route) {
+        LOG(INFO) << idx << " -> ";
         if (!used_ranks[idx / 2]) {
             used_ranks[idx / 2] = true;
-            // LOG(INFO) << idx << " -> ";
             Rank curr = ranks[idx / 2];
             if (!(idx & 1)) {
                 swap(curr.f, curr.s);
@@ -52,7 +62,6 @@ void PrintSolution(const RoutingIndexManager& manager, const RoutingModel& routi
             result << curr << '\n';
             ++size;
         }
-        index = solution.Value(routing.NextVar(index));
     }
     cout << size << '\n';
     cout << result.str();
@@ -231,9 +240,10 @@ private:
 
     std::vector<std::vector<float>> BuildDistanceMatrix(const std::vector<Rank>& ranks) {
         std::vector<std::vector<float>> result(2 * ranks.size(), std::vector<float>(2 * ranks.size(), 0));
-        // LOG(INFO) << ranks[0];
-        // LOG(INFO) << ranks[1];
-        // LOG(INFO) << ranks[2];
+        LOG(INFO) << ranks[0];
+        LOG(INFO) << ranks[1];
+        LOG(INFO) << ranks[2];
+        LOG(INFO) << ranks[3];
         for (int i = 0; i < ranks.size(); ++i) {
             for (int j = 0; j < ranks.size(); ++j) {
                 if (i == j) {
@@ -241,16 +251,16 @@ private:
                 }
                 result[i + i + 1][j + j] = DistanceCounter(ranks[i].f, ranks[j].s);
                 result[i + i + 1][j + j + 1] = DistanceCounter(ranks[i].f, ranks[j].f);
-                result[i + i][j + j] = DistanceCounter(ranks[i].s, ranks[j].f);
-                result[i + i][j + j + 1] = DistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j] = DistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j + 1] = DistanceCounter(ranks[i].s, ranks[j].f);
             }
         }
 
-        // for (int i = 0; i < 6; ++i) {
-        //     for (int j = 0; j < 6; ++j) {
-        //         LOG(INFO) << i << " " << j << " " << result[i][j];
-        //     }
-        // }
+        for (int i = 0; i < 8; ++i) {
+            for (int j = 0; j < 8; ++j) {
+                LOG(INFO) << i << " " << j << " " << result[i][j];
+            }
+        }
         return result;
     }
 
