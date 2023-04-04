@@ -240,10 +240,6 @@ private:
 
     std::vector<std::vector<float>> BuildDistanceMatrix(const std::vector<Rank>& ranks) {
         std::vector<std::vector<float>> result(2 * ranks.size(), std::vector<float>(2 * ranks.size(), 0));
-        LOG(INFO) << ranks[0];
-        LOG(INFO) << ranks[1];
-        LOG(INFO) << ranks[2];
-        LOG(INFO) << ranks[3];
         for (int i = 0; i < ranks.size(); ++i) {
             for (int j = 0; j < ranks.size(); ++j) {
                 if (i == j) {
@@ -253,12 +249,6 @@ private:
                 result[i + i + 1][j + j + 1] = DistanceCounter(ranks[i].f, ranks[j].f);
                 result[i + i][j + j] = DistanceCounter(ranks[i].s, ranks[j].s);
                 result[i + i][j + j + 1] = DistanceCounter(ranks[i].s, ranks[j].f);
-            }
-        }
-
-        for (int i = 0; i < 8; ++i) {
-            for (int j = 0; j < 8; ++j) {
-                LOG(INFO) << i << " " << j << " " << result[i][j];
             }
         }
         return result;
