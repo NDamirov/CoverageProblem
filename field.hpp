@@ -1,6 +1,5 @@
 #pragma once
 
-#include "structures.hpp"
 #include "field.hpp"
 #include <vector>
 #include <string>
@@ -25,5 +24,3 @@ private:
     std::vector<std::vector<FieldElement>> field_;
     std::vector<std::vector<FieldElement>> sol_;
 };
-
-Field read_field(const std::string& file_name);

@@ -106,16 +106,3 @@ std::vector<std::vector<Field::FieldElement>> Field::Solve() {
     }
     return field_;
 }
-
-Field read_field(const std::string& file_name) {
-    std::ifstream fin(file_name);
-    std::string s;
-    std::vector<std::string> input;
-    while (std::getline(fin, s)) {
-        if (s.empty()) {
-            break;
-        }
-        input.push_back(s);
-    }
-    return Field(input);
-}

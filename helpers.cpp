@@ -1,5 +1,18 @@
 #include "helpers.hpp"
 
+Field read_field(const std::string& file_name) {
+    std::ifstream fin(file_name);
+    std::string s;
+    std::vector<std::string> input;
+    while (std::getline(fin, s)) {
+        if (s.empty()) {
+            break;
+        }
+        input.push_back(s);
+    }
+    return Field(input);
+}
+
 void SaveRanks(const std::vector<std::vector<int>>& ranks, std::ofstream& fout) {
     fout << ranks.size() << " " << ranks[0].size() << '\n';
     for (const std::vector<int>& x : ranks) {

@@ -17,5 +17,5 @@ add_definitions(-DUSE_GLOP)
 # compiler flags
 set (CMAKE_CXX_FLAGS "${PROJECT_CXX_FLAGS} ${CMAKE_CXX_FLAGS} -Wall -pedantic -g")
 
-add_executable(test-app main.cpp structures.cpp field.cpp helpers.cpp)
+add_executable(test-app main.cpp structures.cpp field.cpp path_generator.cpp helpers.cpp)
 target_link_libraries(test-app ${ORTOOLS_LIBRARIES})
