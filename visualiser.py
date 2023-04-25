@@ -13,8 +13,8 @@ field = []
 for i in range(width):
     field.append(list(input()))
 
-BLOCK_SIZE = 10
-BORDER_SIZE = 2
+BLOCK_SIZE = 8
+BORDER_SIZE = 1
 SCREEN_WIDTH = len(field[0]) * (BLOCK_SIZE + BORDER_SIZE)
 SCREEN_HEIGHT = len(field) * (BLOCK_SIZE + BORDER_SIZE)
 
@@ -90,12 +90,11 @@ pygame.display.set_caption("Coverage visualizer")
 path_size = int(input())
 path = []
 for i in range(path_size):
-    curr = list(map(int, input().split()))
-    path.append((curr[0], curr[1]))
-    path.append((curr[2], curr[3]))
+    x, y = map(int, input().split())
+    path.append((x, y))
 
 all_sprites_list = pygame.sprite.Group()
-ball = Ball(WHITE, 5, path, speed=10)
+ball = Ball(WHITE, BLOCK_SIZE // 2, path, 10)
 all_sprites_list.add(ball)
 
 clock = pygame.time.Clock()
