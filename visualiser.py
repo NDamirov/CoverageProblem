@@ -94,7 +94,7 @@ for i in range(path_size):
     path.append((x, y))
 
 all_sprites_list = pygame.sprite.Group()
-ball = Ball(WHITE, BLOCK_SIZE // 2, path, 10)
+ball = Ball(WHITE, BLOCK_SIZE // 2, path, 100)
 all_sprites_list.add(ball)
 
 clock = pygame.time.Clock()

@@ -10,16 +10,52 @@ void PathGenerator::MakePath() {
 std::vector<Point> PathGenerator::GetPath() {
     return full_path_;
 }
-float PathGenerator::DistanceCounter(const Point& x, const Point& y) {
+float PathGenerator::ManhattanDistanceCounter(const Point& x, const Point& y) {
     return abs(x.x - y.x) + abs(x.y - y.y);
+}
+
+float PathGenerator::AStarDistanceCounter(const Point& f, const Point& s) {
+    if (f.x == s.x && f.y == s.y) {
+        return 0;
+    }
+    int w = field_[0].size();
+    std::vector<std::vector<double>> dist(field_.size(), std::vector<double>(field_[0].size(), 1e9));
+    std::queue<int> q;
+
+    dist[s.x][s.y] = 0;
+    q.push(w * s.x + s.y);
+    while (dist[f.x][f.y] > 1000000. && !q.empty()) {
+        int last = q.front();
+        q.pop();
+        int x = last / w;
+        int y = last - x * w;
+        if (IsValidPoint(x - 1, y) && dist[x - 1][y] > dist[x][y] + 1) {
+            dist[x - 1][y] = dist[x][y] + 1;
+            q.push(w * (x - 1) + y);
+        }
+        if (IsValidPoint(x + 1, y) && dist[x + 1][y] > dist[x][y] + 1) {
+            dist[x + 1][y] = dist[x][y] + 1;
+            q.push(w * (x + 1) + y);
+        }
+        if (IsValidPoint(x, y - 1) && dist[x][y - 1] > dist[x][y] + 1) {
+            dist[x][y - 1] = dist[x][y] + 1;
+            q.push(w * x + (y - 1));
+        }
+        if (IsValidPoint(x, y + 1) && dist[x][y + 1] > dist[x][y] + 1) {
+            dist[x][y + 1] = dist[x][y] + 1;
+            q.push(w * x + (y + 1));
+        }
+    }
+    LOG(INFO) << "Distance is: " << dist[f.x][f.y];
+    return dist[f.x][f.y];
 }
 
 std::vector<Point> PathGenerator::GenerateSolution(const RoutingIndexManager& manager, const RoutingModel& routing, 
     const Assignment& solution, const std::vector<Rank>& ranks) {
     int64_t index = routing.Start(0);
     
-    vector<bool> used_ranks(ranks.size(), false);
-    vector<int> route;
+    std::vector<bool> used_ranks(ranks.size(), false);
+    std::vector<int> route;
     route.reserve(2 * ranks.size());
     while (routing.IsEnd(index) == false) {
         int idx = manager.IndexToNode(index).value();
@@ -36,7 +72,7 @@ std::vector<Point> PathGenerator::GenerateSolution(const RoutingIndexManager& ma
             used_ranks[idx / 2] = true;
             Rank curr = ranks[idx / 2];
             if (!(idx & 1)) {
-                swap(curr.f, curr.s);
+                std::swap(curr.f, curr.s);
             }
             result.push_back(curr.f);
             result.push_back(curr.s);
@@ -76,10 +112,17 @@ std::vector<std::vector<float>> PathGenerator::BuildDistanceMatrix(const std::ve
             if (i == j) {
                 continue;
             }
-            result[i + i + 1][j + j] = DistanceCounter(ranks[i].f, ranks[j].s);
-            result[i + i + 1][j + j + 1] = DistanceCounter(ranks[i].f, ranks[j].f);
-            result[i + i][j + j] = DistanceCounter(ranks[i].s, ranks[j].s);
-            result[i + i][j + j + 1] = DistanceCounter(ranks[i].s, ranks[j].f);
+            if (type_ == DistanceType::Manhattan) {
+                result[i + i + 1][j + j] = ManhattanDistanceCounter(ranks[i].f, ranks[j].s);
+                result[i + i + 1][j + j + 1] = ManhattanDistanceCounter(ranks[i].f, ranks[j].f);
+                result[i + i][j + j] = ManhattanDistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j + 1] = ManhattanDistanceCounter(ranks[i].s, ranks[j].f);
+            } else {
+                result[i + i + 1][j + j] = AStarDistanceCounter(ranks[i].f, ranks[j].s);
+                result[i + i + 1][j + j + 1] = AStarDistanceCounter(ranks[i].f, ranks[j].f);
+                result[i + i][j + j] = AStarDistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j + 1] = AStarDistanceCounter(ranks[i].s, ranks[j].f);   
+            }
         }
     }
     return result;
@@ -93,7 +136,6 @@ void PathGenerator::MakeMiddleTrip(const Point& f, const Point& s) {
     if (f.x == s.x && f.y == s.y) {
         return;
     }
-    int h = field_.size();
     int w = field_[0].size();
     static std::vector<std::vector<int>> prev(field_.size(), std::vector<int>(field_[0].size(), 1e9));
     std::vector<std::vector<char>> dist(field_.size(), std::vector<char>(field_[0].size(), 1));
