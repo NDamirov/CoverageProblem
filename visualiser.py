@@ -7,13 +7,19 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
 RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+
+pygame.init()
+screen = pygame.display.set_mode((0, 0))
+display_size = screen.get_size()
 
 width, height = map(int, input().split())
 field = []
 for i in range(width):
     field.append(list(input()))
 
-BLOCK_SIZE = 8
+TOTAL_BLOCK_SIZE = min(display_size[0] // height, display_size[1] // width, 10)
+BLOCK_SIZE = TOTAL_BLOCK_SIZE - 1
 BORDER_SIZE = 1
 SCREEN_WIDTH = len(field[0]) * (BLOCK_SIZE + BORDER_SIZE)
 SCREEN_HEIGHT = len(field) * (BLOCK_SIZE + BORDER_SIZE)
@@ -83,7 +89,6 @@ class Ball(pygame.sprite.Sprite):
         self.real_x = x
         self.real_y = y
 
-pygame.init()
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 pygame.display.set_caption("Coverage visualizer")
 
@@ -94,8 +99,16 @@ for i in range(path_size):
     path.append((x, y))
 
 all_sprites_list = pygame.sprite.Group()
-ball = Ball(WHITE, BLOCK_SIZE // 2, path, 100)
+ball = Ball(WHITE, BLOCK_SIZE // 2, path, 50)
 all_sprites_list.add(ball)
+
+cur_x, cur_y = path[0]
+for x, y in path[1:]:
+    pygame.draw.line(background, GREEN, (cur_y * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2,
+                                         cur_x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2),     
+                                        (y * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2,
+                                         x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2))
+    cur_x, cur_y = x, y
 
 clock = pygame.time.Clock()
 done = False
