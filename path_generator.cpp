@@ -19,8 +19,9 @@ float PathGenerator::AStarDistanceCounter(const Point& f, const Point& s) {
         return 0;
     }
     int w = field_[0].size();
-    std::vector<std::vector<double>> dist(field_.size(), std::vector<double>(field_[0].size(), 1e9));
-    std::queue<int> q;
+    std::vector<std::vector<double>> dist(
+        field_.size(), std::vector<double>(field_[0].size(), 1e9));
+    s td::queue<int> q;
 
     dist[s.x][s.y] = 0;
     q.push(w * s.x + s.y);
@@ -50,10 +51,11 @@ float PathGenerator::AStarDistanceCounter(const Point& f, const Point& s) {
     return dist[f.x][f.y];
 }
 
-std::vector<Point> PathGenerator::GenerateSolution(const RoutingIndexManager& manager, const RoutingModel& routing, 
+std::vector<Point> PathGenerator::GenerateSolution(
+    const RoutingIndexManager& manager, const RoutingModel& routing,
     const Assignment& solution, const std::vector<Rank>& ranks) {
     int64_t index = routing.Start(0);
-    
+
     std::vector<bool> used_ranks(ranks.size(), false);
     std::vector<int> route;
     route.reserve(2 * ranks.size());
@@ -87,7 +89,8 @@ std::vector<Rank> PathGenerator::BuildRanks() {
     int width = field_[0].size();
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
-            if (field_[i][j] == 1 && (j == 0 || field_[i][j - 1] != 1)) { // horizontal
+            if (field_[i][j] == 1 &&
+                (j == 0 || field_[i][j - 1] != 1)) {  // horizontal
                 int length = 1;
                 while (j + length < width && field_[i][j + length] == 1) {
                     length++;
@@ -105,23 +108,33 @@ std::vector<Rank> PathGenerator::BuildRanks() {
     return ranks;
 }
 
-std::vector<std::vector<float>> PathGenerator::BuildDistanceMatrix(const std::vector<Rank>& ranks) {
-    std::vector<std::vector<float>> result(2 * ranks.size(), std::vector<float>(2 * ranks.size(), 0));
+std::vector<std::vector<float>> PathGenerator::BuildDistanceMatrix(
+    const std::vector<Rank>& ranks) {
+    std::vector<std::vector<float>> result(
+        2 * ranks.size(), std::vector<float>(2 * ranks.size(), 0));
     for (int i = 0; i < ranks.size(); ++i) {
         for (int j = 0; j < ranks.size(); ++j) {
             if (i == j) {
                 continue;
             }
             if (type_ == DistanceType::Manhattan) {
-                result[i + i + 1][j + j] = ManhattanDistanceCounter(ranks[i].f, ranks[j].s);
-                result[i + i + 1][j + j + 1] = ManhattanDistanceCounter(ranks[i].f, ranks[j].f);
-                result[i + i][j + j] = ManhattanDistanceCounter(ranks[i].s, ranks[j].s);
-                result[i + i][j + j + 1] = ManhattanDistanceCounter(ranks[i].s, ranks[j].f);
+                result[i + i + 1][j + j] =
+                    ManhattanDistanceCounter(ranks[i].f, ranks[j].s);
+                result[i + i + 1][j + j + 1] =
+                    ManhattanDistanceCounter(ranks[i].f, ranks[j].f);
+                result[i + i][j + j] =
+                    ManhattanDistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j + 1] =
+                    ManhattanDistanceCounter(ranks[i].s, ranks[j].f);
             } else {
-                result[i + i + 1][j + j] = AStarDistanceCounter(ranks[i].f, ranks[j].s);
-                result[i + i + 1][j + j + 1] = AStarDistanceCounter(ranks[i].f, ranks[j].f);
-                result[i + i][j + j] = AStarDistanceCounter(ranks[i].s, ranks[j].s);
-                result[i + i][j + j + 1] = AStarDistanceCounter(ranks[i].s, ranks[j].f);   
+                result[i + i + 1][j + j] =
+                    AStarDistanceCounter(ranks[i].f, ranks[j].s);
+                result[i + i + 1][j + j + 1] =
+                    AStarDistanceCounter(ranks[i].f, ranks[j].f);
+                result[i + i][j + j] =
+                    AStarDistanceCounter(ranks[i].s, ranks[j].s);
+                result[i + i][j + j + 1] =
+                    AStarDistanceCounter(ranks[i].s, ranks[j].f);
             }
         }
     }
@@ -129,7 +142,8 @@ std::vector<std::vector<float>> PathGenerator::BuildDistanceMatrix(const std::ve
 }
 
 bool PathGenerator::IsValidPoint(int x, int y) {
-    return (x >= 0) && (y >= 0) && (x < field_.size()) && (y < field_[0].size()) && (field_[x][y] != -1);
+    return (x >= 0) && (y >= 0) && (x < field_.size()) &&
+           (y < field_[0].size()) && (field_[x][y] != -1);
 }
 
 void PathGenerator::MakeMiddleTrip(const Point& f, const Point& s) {
@@ -137,8 +151,10 @@ void PathGenerator::MakeMiddleTrip(const Point& f, const Point& s) {
         return;
     }
     int w = field_[0].size();
-    static std::vector<std::vector<int>> prev(field_.size(), std::vector<int>(field_[0].size(), 1e9));
-    std::vector<std::vector<char>> dist(field_.size(), std::vector<char>(field_[0].size(), 1));
+    static std::vector<std::vector<int>> prev(
+        field_.size(), std::vector<int>(field_[0].size(), 1e9));
+    std::vector<std::vector<char>> dist(field_.size(),
+                                        std::vector<char>(field_[0].size(), 1));
 
     std::queue<int> q;
     prev[s.x][s.y] = 0;
@@ -180,15 +196,15 @@ void PathGenerator::MakeMiddleTrip(const Point& f, const Point& s) {
     full_path_.push_back(s);
 }
 
-void PathGenerator::Tsp(std::vector<std::vector<float>>& dists, const std::vector<Rank> ranks) {
+void PathGenerator::Tsp(std::vector<std::vector<float>>& dists,
+                        const std::vector<Rank> ranks) {
     const RoutingIndexManager::NodeIndex depot{0};
     RoutingIndexManager manager(dists.size(), 1, depot);
 
     RoutingModel routing(manager);
 
     const int transit_callback_index = routing.RegisterTransitCallback(
-        [&dists, &manager](int64_t from_index,
-                                    int64_t to_index) -> int64_t {
+        [&dists, &manager](int64_t from_index, int64_t to_index) -> int64_t {
             auto from_node = manager.IndexToNode(from_index).value();
             auto to_node = manager.IndexToNode(to_index).value();
             return dists[from_node][to_node];
@@ -200,7 +216,8 @@ void PathGenerator::Tsp(std::vector<std::vector<float>>& dists, const std::vecto
         FirstSolutionStrategy::PATH_CHEAPEST_ARC);
 
     const Assignment* solution = routing.SolveWithParameters(searchParameters);
-    std::vector<Point> rank_solution = GenerateSolution(manager, routing, *solution, ranks);
+    std::vector<Point> rank_solution =
+        GenerateSolution(manager, routing, *solution, ranks);
     full_path_ = {rank_solution[0]};
     for (int i = 1; i < rank_solution.size(); ++i) {
         MakeMiddleTrip(rank_solution[i - 1], rank_solution[i]);

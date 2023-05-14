@@ -3,6 +3,7 @@ from math import sqrt
 
 BLACK = (0, 0, 0)
 
+
 class Ball(pygame.sprite.Sprite):
     def __init__(self, color, radius, path=[], speed=1, block_size=5, border_size=1):
         super().__init__()
@@ -45,7 +46,7 @@ class Ball(pygame.sprite.Sprite):
             x += (nxc[0] - x) * to_go / curr
             y += (nxc[1] - y) * to_go / curr
             break
-        
+
         self.rect.x = x
         self.rect.y = y
         self.real_x = x

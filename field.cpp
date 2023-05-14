@@ -39,25 +39,27 @@ std::vector<std::vector<Field::FieldElement>> Field::Solve() {
     }
 
     std::vector<double> bounds(2 * spaces_, 0);
-    std::vector<std::vector<double>> coefs(2 * spaces_, std::vector<double>(3 * spaces_, 0));
+    std::vector<std::vector<double>> coefs(2 * spaces_,
+                                           std::vector<double>(3 * spaces_, 0));
 
     int ind = 0;
     int c_ind = 0;
     LOG(INFO) << "Building coefs";
     for (int i = 0; i < height_; i++) {
-        for (int j = 0; j < width_; ++j){ 
+        for (int j = 0; j < width_; ++j) {
             if (field_[i][j] == -1) {
                 continue;
             }
             field_[i][j] = ind;
             //------------
-            coefs[c_ind][ind] = coefs[c_ind + 1][spaces_ + ind] = -1; // y_h[i], y_v[i]
-            coefs[c_ind][spaces_ + spaces_ + ind] = 1; // x_h[i]
+            coefs[c_ind][ind] = -1;                     // y_h[i]
+            coefs[c_ind + 1][spaces_ + ind] = -1;       // y_v[i]
+            coefs[c_ind][spaces_ + spaces_ + ind] = 1;  // x_h[i]
             if (!(j == 0 || field_[i][j - 1] == -1)) {
-                coefs[c_ind][spaces_ + spaces_ + ind - 1] = -1; // x_h[left(i)]
+                coefs[c_ind][spaces_ + spaces_ + ind - 1] = -1;  // x_h[left(i)]
             }
             //------------
-            coefs[c_ind + 1][spaces_ + spaces_ + ind] = -1; // x_h[i]
+            coefs[c_ind + 1][spaces_ + spaces_ + ind] = -1;  // x_h[i]
             bounds[c_ind + 1] = -1;
             if (!(i == 0 || field_[i - 1][j] == -1)) {
                 bounds[c_ind + 1] = 0;
@@ -81,7 +83,8 @@ std::vector<std::vector<Field::FieldElement>> Field::Solve() {
     }
 
     for (int i = 0; i < 2 * spaces_; ++i) {
-        MPConstraint* constraint = solver->MakeRowConstraint(-solver->infinity(), bounds[i], "");
+        MPConstraint* constraint =
+            solver->MakeRowConstraint(-solver->infinity(), bounds[i], "");
         for (int j = 0; j < 3 * spaces_; ++j) {
             constraint->SetCoefficient(x[j], coefs[i][j]);
         }

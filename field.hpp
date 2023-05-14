@@ -1,9 +1,9 @@
 #pragma once
 
-#include "field.hpp"
-#include <vector>
-#include <string>
 #include <fstream>
+#include <string>
+#include <vector>
+#include "field.hpp"
 
 class Field {
 public:

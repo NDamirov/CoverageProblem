@@ -2,8 +2,8 @@
 
 #include <fstream>
 #include <vector>
-#include "structures.hpp"
 #include "field.hpp"
+#include "structures.hpp"
 
 Field read_field(const std::string& file_name);
 

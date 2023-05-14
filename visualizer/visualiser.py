@@ -29,19 +29,23 @@ background.fill(WHITE)
 for i in range(len(field)):
     for j in range(len(field[i])):
         color = BLACK
-        if field[i][j] == '|': color = RED
-        elif field[i][j] == '-': color = BLUE
+        if field[i][j] == '|':
+            color = RED
+        elif field[i][j] == '-':
+            color = BLUE
         pygame.draw.rect(background, color, [j * (BLOCK_SIZE + BORDER_SIZE),
-                        i * (BLOCK_SIZE + BORDER_SIZE),
-                        BLOCK_SIZE, BLOCK_SIZE])
+                                             i * (BLOCK_SIZE + BORDER_SIZE),
+                                             BLOCK_SIZE, BLOCK_SIZE])
         if field[i][j] == '|' and i + 1 < len(field) and field[i + 1][j] == '|':
             pygame.draw.rect(background, color, [j * (BLOCK_SIZE + BORDER_SIZE),
-                            i * (BLOCK_SIZE + BORDER_SIZE),
-                            BLOCK_SIZE, BLOCK_SIZE + BORDER_SIZE])
+                                                 i * (BLOCK_SIZE +
+                                                      BORDER_SIZE),
+                                                 BLOCK_SIZE, BLOCK_SIZE + BORDER_SIZE])
         if field[i][j] == '-' and j + 1 < len(field[i]) and field[i][j + 1] == '-':
             pygame.draw.rect(background, color, [j * (BLOCK_SIZE + BORDER_SIZE),
-                            i * (BLOCK_SIZE + BORDER_SIZE),
-                            BLOCK_SIZE + BORDER_SIZE, BLOCK_SIZE])
+                                                 i * (BLOCK_SIZE +
+                                                      BORDER_SIZE),
+                                                 BLOCK_SIZE + BORDER_SIZE, BLOCK_SIZE])
 
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 pygame.display.set_caption("Coverage visualizer")
@@ -59,9 +63,9 @@ all_sprites_list.add(ball)
 cur_x, cur_y = path[0]
 for x, y in path[1:]:
     pygame.draw.line(background, GREEN, (cur_y * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2,
-                                         cur_x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2),     
-                                        (y * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2,
-                                         x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2))
+                                         cur_x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2),
+                     (y * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2,
+                      x * (BLOCK_SIZE + BORDER_SIZE) + BLOCK_SIZE / 2))
     cur_x, cur_y = x, y
 
 clock = pygame.time.Clock()
@@ -75,7 +79,7 @@ while not done:
     all_sprites_list.update()
     all_sprites_list.draw(screen)
 
-    pygame.display.flip()    
+    pygame.display.flip()
     clock.tick(30)
 
 pygame.quit()

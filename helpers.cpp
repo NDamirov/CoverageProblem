@@ -13,7 +13,8 @@ Field read_field(const std::string& file_name) {
     return Field(input);
 }
 
-void SaveRanks(const std::vector<std::vector<int>>& ranks, std::ofstream& fout) {
+void SaveRanks(const std::vector<std::vector<int>>& ranks,
+               std::ofstream& fout) {
     fout << ranks.size() << " " << ranks[0].size() << '\n';
     for (const std::vector<int>& x : ranks) {
         for (int y : x) {

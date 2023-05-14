@@ -1,18 +1,18 @@
-#include <vector>
-#include <string>
-#include <iostream>
 #include <fstream>
+#include <iostream>
+#include <string>
 #include <unordered_set>
+#include <vector>
 
-#include "helpers.hpp"
-#include "structures.hpp"
 #include "field.hpp"
-#include "path_generator.hpp"
 #include "helpers.hpp"
+#include "path_generator.hpp"
+#include "structures.hpp"
 
-int main(int argc, char **argv) { 
+int main(int argc, char** argv) {
     if (argc < 3) {
-        std::cout << "Invalid input: ./program <in file> <out file> <optional args>";
+        std::cout
+            << "Invalid input: ./program <in file> <out file> <optional args>";
         return 1;
     }
 
