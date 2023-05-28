@@ -1,8 +1,0 @@
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/install/strip.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/install.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/rebuild_cache.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/edit_cache.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/install/local.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/test.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/list_install_components.dir
-/Users/namigdamirov/Documents/HSE/CoverageProblem/or-tools/examples/vrp/build/CMakeFiles/vrp.dir

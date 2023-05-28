@@ -1,2 +1,0 @@
-test_simple_sat_program 4 0.0027385
----

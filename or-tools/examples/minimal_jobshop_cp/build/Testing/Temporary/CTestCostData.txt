@@ -1,2 +1,0 @@
-test_minimal_jobshop_cp 3 0.00395469
----
