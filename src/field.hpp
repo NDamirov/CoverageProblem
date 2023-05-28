@@ -5,6 +5,8 @@
 #include <vector>
 #include "field.hpp"
 
+// Builds field representation from input file
+// Gives opportunity to build ranks
 class Field {
 public:
     using FieldElement = int;
@@ -15,6 +17,8 @@ public:
     const std::vector<FieldElement>& operator[](int i) const;
 
     void Resize(int w, int h);
+
+    // Build ranks
     std::vector<std::vector<FieldElement>> Solve();
 
 private:

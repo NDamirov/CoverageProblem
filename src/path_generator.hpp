@@ -16,13 +16,17 @@ enum class DistanceType {
     Manhattan  // fast
 };
 
+// Class for building path on field with built ranks
 class PathGenerator {
 public:
     PathGenerator(std::vector<std::vector<int>>&& field,
                   DistanceType type = DistanceType::Manhattan)
         : type_(type), field_(std::move(field)) {}
 
+    // Build path and save in class object
     void MakePath();
+
+    // Returns path. Empty if MakePath was not called
     std::vector<Point> GetPath();
 
 private:
